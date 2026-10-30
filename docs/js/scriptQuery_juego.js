@@ -10,7 +10,7 @@ console.log("JS juego cargado")
 let datosSession = Results.cargarDeSesion();
 
 //Definimos el tiempo del temporalizador
-let tiempo = 90000000000;
+let tiempo = 30;
 
 
 
