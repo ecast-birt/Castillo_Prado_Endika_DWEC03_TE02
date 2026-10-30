@@ -3,8 +3,7 @@
 //-- IMPORTS --
 import { Results } from './models/Results.js';
 
-
-console.log("JS juego cargado")
+console.log("JS juego cargado") 
 
 //-- Cargamos los datos del SessionStorage
 let datosSession = Results.cargarDeSesion();
