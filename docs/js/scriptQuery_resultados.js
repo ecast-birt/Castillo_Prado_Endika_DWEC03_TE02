@@ -3,9 +3,6 @@
 //-- IMPORTS --
 import { Results } from './models/Results.js';
 
-
-
-
 $(document).ready(function() {
 
     const contenedor = $('#lista-datos');

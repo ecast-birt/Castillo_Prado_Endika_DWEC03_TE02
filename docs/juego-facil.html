@@ -29,10 +29,160 @@
 
     <body>
         <span id="counter"></span>
+        <main class="tablero-investigacion">
 
-    
+        <section class="area-cuadricula" id="area-cuadricula">
+            <header class="seccion-titulo">
+                <span>Plano Pericial Cuadriculado</span>
+                <span class="codigo-ref">DOC-X9 // SUPERFICIE 4×4</span>
+            </header>
 
-        <hr>
+            <!-- CONTENEDOR SUPERPUESTO (FOTO BASE + CUADRÍCULA ENCIMA) -->
+            <div class="murdoku-tablero-superpuesto">
+
+                <img src="img/facil.jpg" alt="Escenario del crimen" class="plano-fondo-img">
+
+                <!-- 2. Sello forense en la esquina -->
+                <div class="sello-evidencia">ANEXO A</div>
+
+                <!-- 3. Cuadrícula 4×4 interactiva superpuesta -->
+                <div class="matriz-4x4-superpuesta">
+                    <!-- Fila 1 -->
+                    <div class="celda-drop" data-row="0" data-col="0"></div>
+                    <div class="celda-drop" data-row="0" data-col="1"></div>
+                    <div class="celda-drop" data-row="0" data-col="2"></div>
+                    <div class="celda-drop" data-row="0" data-col="3"></div>
+
+                    <!-- Fila 2 -->
+                    <div class="celda-drop" data-row="1" data-col="0"></div>
+                    <div class="celda-drop" data-row="1" data-col="1"></div>
+                    <div class="celda-drop" data-row="1" data-col="2"></div>
+                    <div class="celda-drop" data-row="1" data-col="3"></div>
+
+                    <!-- Fila 3 -->
+                    <div class="celda-drop" data-row="2" data-col="0"></div>
+                    <div class="celda-drop" data-row="2" data-col="1"></div>
+                    <div class="celda-drop" data-row="2" data-col="2"></div>
+                    <div class="celda-drop" data-row="2" data-col="3"></div>
+
+                    <!-- Fila 4 -->
+                    <div class="celda-drop" data-row="3" data-col="0"></div>
+                    <div class="celda-drop" data-row="3" data-col="1"></div>
+                    <div class="celda-drop" data-row="3" data-col="2"></div>
+                    <div class="celda-drop" data-row="3" data-col="3"></div>
+                </div>
+
+            </div>
+        </section>
+            
+
+            <!-- ÁREA 2: PANEL DE SOSPECHOSOS DISPONIBLES -->
+            <div class="columna-lateral">
+                <aside class="area-sospechosos" id="area-sospechosos">
+                    <header class="seccion-titulo">
+                        <span>Fichas Policiales</span>
+                        <span class="codigo-ref">SUJETOS</span>
+                    </header>
+
+                    <div class="lista-sospechosos" id="lista-sospechosos">
+                        
+                        <div class="tarjeta-sospechoso" draggable="true" data-id="1">
+                            <div class="retrato-sospechoso">
+                                
+                                <span style="font-size:30px;">😀</span>
+
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Rigoberto Marque </span>
+                                <span class="rol-sospechoso">Estaba a solas en una habitacion con una estanteria</span>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-sospechoso" draggable="true" data-id="2">
+                            <div class="retrato-sospechoso">
+                                <span style="font-size:30px;">😼</span>
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Jose Juan Martinez</span>
+                                <span class="rol-sospechoso">Estba al sur de una caja de madera, en otra habitacion</span>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-sospechoso" draggable="true" data-id="3">
+                            <div class="retrato-sospechoso">
+                                <span style="font-size:30px;">👽</span>
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Andeka Castiglio</span>
+                                <span class="rol-sospechoso">Estaba al sur de una caja de madras</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <!-- ÁREA 2: PANEL CON ACLARACIONES -->
+                <aside class="area-sospechosos" id="area-sospechosos">
+                    <header class="seccion-titulo">
+                        <span>REGLAS EXTRA</span>
+                        <span class="codigo-ref"></span>
+                    </header>
+
+                    <div class="lista-sospechosos" id="lista-sospechosos">
+                        
+                        <div class="tarjeta-sospechoso" >
+                            <div class="retrato-sospechoso">
+                                <img src="img/caja.png">
+
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Caja de Madera </span>
+                                <span class="rol-sospechoso">No puede haber nadie encima</span>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-sospechoso" >
+                            <div class="retrato-sospechoso">
+                                <img src="img/pantalla.PNG">
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Pantalla</span>
+                                <span class="rol-sospechoso">No puede haber nadie encima</span>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-sospechoso" >
+                            <div class="retrato-sospechoso">
+                                <img src="img/estanteria.PNG">
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Estanteria</span>
+                                <span class="rol-sospechoso">No puede haber nadie encima</span>
+                            </div>
+                        </div>
+                        <div class="tarjeta-sospechoso" >
+                            <div class="retrato-sospechoso">
+                                <img src="img/taquilla.PNG">
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Taquilla</span>
+                                <span class="rol-sospechoso">No puede haber nadie encima</span>
+                            </div>
+                        </div>
+                        <div class="tarjeta-sospechoso" >
+                            <div class="retrato-sospechoso">
+                                <span style="font-size:30px;">⬇️</span>
+                            </div>
+                            <div class="info-sospechoso">
+                                <span class="nombre-sospechoso">Cuando dice al Sur </span>
+                                <span class="rol-sospechoso">Se encuentra en esa direccion respecto a la persona nombrada</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+        </main>
     </body>
 
 </html>

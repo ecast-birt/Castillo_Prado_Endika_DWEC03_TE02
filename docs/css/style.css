@@ -21,7 +21,9 @@ p {
     margin-bottom: 1.5rem;
 
 }
-/* Tarjeta principal */
+/* =======================================================
+   LOGIN 
+   ======================================================= */
 .login-card {
     background: #ffffff;
     padding: 2.5rem 2.2rem 2.8rem 2.2rem;
@@ -136,7 +138,9 @@ input[type="password"]:focus {
     box-shadow: 0 4px 12px rgba(0, 104, 138, 0.3);
 }
 
-/* Grupo selector de dificultad */
+/* =======================================================
+   SELECTOR DE DIFICULTAD
+   ======================================================= */
 .difficulty-group {
     width: 100%;
     margin-bottom: 1.5rem;
@@ -196,22 +200,30 @@ input[type="password"]:focus {
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 104, 138, 0.25);
 }
-/*Temporalizador*/
+/* =======================================================
+   TEMPORIZADOR
+   ======================================================= */
 #counter {
-  display: inline-block;          /* Permite darle ancho y alto */
-  width: 120px;                   /* Ajusta el ancho a tu gusto */
-  padding: 15px 0;                /* Espaciado superior e inferior */
-  text-align: center;             /* Centra el número horizontalmente */
-  font-size: 3rem;                /* Tamaño grande para los números */
-  font-weight: bold;              /* Negrita */
-  color: #111;                    /* Color oscuro para el texto */
-  border: 3px solid #000;         /* Borde negro sólido y ancho */
-  background-color: #fff;         /* Fondo blanco */
-  border-radius: 8px;             /* Opcional: esquinas ligeramente redondeadas */
-  font-family: sans-serif;
-}
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 100;
+    display: inline-block;          
+    width: 120px;                   
+    padding: 15px 0;                
+    text-align: center;             
+    font-size: 3rem;                
+    font-weight: bold;              
+    color: #111;                    
+    border: 3px solid #000;         
+    background-color: #fff;        
+    border-radius: 8px;            
+    font-family: sans-serif;
+    }
 
-/*pagina de resultados */
+/* =======================================================
+    INFORME DE RESULTADOS
+   ======================================================= */
 .contenedor-resultados {
     background: #fff;
     border: 3px solid #000;
@@ -240,4 +252,240 @@ h1 {
 .dato-item span.valor {
     font-weight: bold;
     color: #333;
+}
+/* =======================================================
+    TABLERO DE INVESTIGACIÓN: ÁREA 1 Y ÁREA 2
+   ======================================================= */
+.murdoku-tablero-superpuesto {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 440px; /* Cuadrado simétrico para mantener celdas proporcionales */
+    margin: 0 auto;
+    border: 3px solid var(--tinta-fuerte);
+    border-radius: 2px;
+    box-shadow: 6px 6px 0px var(--tinta-fuerte);
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+/* 1. Imagen del plano/escenario ubicada debajo */
+.plano-fondo-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* Tratamiento estético de documento antiguo */
+    filter: sepia(35%) contrast(1.15) brightness(0.92);
+}
+
+.tablero-investigacion {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.seccion-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.seccion-titulo .codigo-ref {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.75rem;
+    color: #9b2226;
+    letter-spacing: 1.5px;
+}
+
+/* ÁREA 1: CUADRÍCULA */
+.area-cuadricula {
+    background-color: #f4ebd9;
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+    padding: 2rem;
+    border: 2px solid #2b2b2a;
+    border-radius: 3px;
+    box-shadow: 
+        6px 6px 0px #1a1a1a,
+        inset 0 0 30px rgba(180, 160, 130, 0.2);
+    min-height: 520px;
+    position: relative;
+}
+
+.lienzo-matriz {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #b8a88a;
+    background: rgba(251, 247, 238, 0.6);
+    padding: 1.5rem;
+}
+
+/* ÁREA 2: SOSPECHOSOS */
+.area-sospechosos {
+    background-color: #ede2c8;
+    padding: 1.6rem 1.4rem;
+    border: 1px solid #b8a88a;
+    border-radius: 3px;
+    box-shadow: 
+        4px 4px 0px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.lista-sospechosos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta-sospechoso {
+    background-color: #fbf7ee;
+    border: 1.5px solid #2b2b2a;
+    border-radius: 2px;
+    padding: 0.75rem 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    box-shadow: 2px 2px 0px #1a1a1a;
+    user-select: none;
+}
+
+/* RETRATO ARRASTRABLE */
+.retrato-sospechoso {
+    width: 54px;
+    height: 54px;
+    background: #e0d5be;
+    border: 1.5px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    filter: grayscale(80%) sepia(20%);
+    cursor: grab;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.retrato-sospechoso:hover {
+    transform: scale(1.06);
+    border-color: #9b2226;
+    box-shadow: 2px 2px 0px #9b2226;
+}
+
+.retrato-sospechoso:active {
+    cursor: grabbing;
+}
+
+.retrato-sospechoso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.retrato-sospechoso.dragging {
+    opacity: 0.35;
+    transform: scale(0.95);
+    border: 1.5px dashed #9b2226;
+    box-shadow: none;
+}
+
+.info-sospechoso {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-sospechoso {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rol-sospechoso {
+    font-size: 0.75rem;
+    color: #7a6e5f;
+    font-style: italic;
+    font-family: 'Courier Prime', monospace;
+}
+
+/* =======================================================
+   DESTINO DROP & SOSPECHOSO EN CASILLA
+   ======================================================= */
+.celda-drop {
+    width: 60px;
+    height: 60px;
+    background-color: #fbf7ee;
+    border: 1.5px dashed #b8a88a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.celda-drop.drag-over {
+    background-color: rgba(155, 34, 38, 0.12);
+    border-color: #9b2226;
+    border-style: solid;
+}
+
+.sospechoso-asignado {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sospechoso-asignado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) sepia(20%);
+}
+
+.sospechoso-asignado .btn-quitar {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #9b2226;
+    color: #ffffff;
+    border: 1px solid #1a1a1a;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sospechoso-asignado .btn-quitar:hover {
+    background: #1a1a1a;
 }
