@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+
+        <!-- -------------CONFIGURACION CABECERA--------------->
+        <meta charset="utf-8">
+        
+
+        <!-- -------------EJECUTAR JAVASCRIPT------------------>
+        <!--metiendo la etiqueta script en el head, el navegador ejecuta el script antes de cargar el body--> 
+        
+        <!-- Importante cargar primero el script de JQuery-->
+        <script type="text/javascript" src="js/jquery_4.0.0.js"></script>
+        <script type="module" src="js/scriptQuery_bienvenida.js"></script>
+		
+
+
+        <!-- ------------- TITULO DE LA PAGINA -------------->
+        <title>Murdoku - Bienvenida</title>
+		
+		<!--//AÑADIDOS ESTILOS DE CSS -->
+		<link rel="stylesheet" href="./css/style.css">
+
+
+    </head>
+
+    <body>
+        <main class="login-card">
+                <!-- Contenedor del Logo superior -->
+                <div class="logo-container">
+                    <img src="img/logo.jpg" alt="Logo BIRTdoku">
+                </div>
+
+                <h1>Indicaciones del juego</h1>
+                <p class="subtitle">Reglas</p>
+                <p>El objetivo del Murdoku es llenar una cuadrícula de 9x9 con números del 1 al 9, de manera que cada fila, columna y cuadrícula de 3x3 contenga todos los números sin repetir.</p>
+
+            <div class="difficulty-group">
+                <label class="difficulty-label">Seleccione la dificultad</label>
+                <div class="difficulty-selector">
+                    <button type="button" class="diff-btn active" data-url="juego-facil.html">Fácil</button>
+                    <button type="button" class="diff-btn" data-url="juego-medio.html">Medio</button>
+                    <button type="button" class="diff-btn" data-url="juego-dificil.html">Difícil</button>
+                </div>
+            </div>
+
+            <button type="button" id="btn-comenzar" class="btn">Comenzar juego</button>
+
+        </main>
+ 
+
+    
+
+        <hr>
+    </body>
+
+</html>
