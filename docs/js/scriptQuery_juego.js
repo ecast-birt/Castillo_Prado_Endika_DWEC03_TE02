@@ -1,18 +1,38 @@
 'use strict';
 
-$(document).ready(function() {
-    // 1. Cambiar estado visual al hacer clic en un nivel
-    $('.diff-btn').on('click', function() {
-        $('.diff-btn').removeClass('active');
-        $(this).addClass('active');
-    });
+//-- IMPORTS --
+import { Results } from './models/Results.js';
 
-    // 2. Al hacer clic en "Comenzar juego", redirigir según el botón activo
-    $('#btn-comenzar').on('click', function() {
-        const destino = $('.diff-btn.active').data('url');
-        
-        if (destino) {
-            window.location.href = destino;
-        }
-    });
-});
+
+//-- Cargamos los datos del SessionStorage
+let datosSession = Results.cargarDeSesion();
+
+//Definimos el tiempo del temporalizador
+let tiempo = 5;
+
+
+
+const intervalo = setInterval(function() {
+
+    $('#counter').text(tiempo);
+
+    //Comprobamos si el tiempo ha llegado a cero
+    if (tiempo <= 0) {
+        clearInterval(intervalo); // Detenemos el contador
+        alert('¡Se acabó el tiempo!');
+
+        //Actualizamos el sesionStorage
+        datosSession.nivel = "Facil";
+        datosSession.puntuacion +=0;
+        datosSession.intentos +=1;
+        datosSession.ganado = false;
+
+        datosSession.guardarEnSesion();
+
+        window.location.href = "resultados.html";
+
+
+    } else {
+        tiempo--; // Restamos uno a la variable
+    }
+}, 1000);

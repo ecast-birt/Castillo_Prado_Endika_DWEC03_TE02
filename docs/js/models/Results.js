@@ -9,5 +9,24 @@ export class Results {
         this.intentos = intentos
         this.intentos_ganados =int_ganados
     }
+    // Guardar en sessionStorage como JSON
+    guardarEnSesion(clave = 'murdokuPartida') {
+        sessionStorage.setItem(clave, JSON.stringify(this));
+    }
 
+    // Cargar de sessionStorage y reconstruir el objeto
+    static cargarDeSesion(clave = 'murdokuPartida') {
+        const datosJSON = sessionStorage.getItem(clave);
+        if (!datosJSON) return null; 
+
+        const datos = JSON.parse(datosJSON);
+        return new Results(
+        datos.nivel,
+        datos.puntuacion,
+        datos.tiempo,
+        datos.ganado,
+        datos.intentos,
+        datos.intentos_ganados
+        );
+    }
 }

@@ -7,15 +7,11 @@
 
         <!-- -------------CONFIGURACION CABECERA--------------->
         <meta charset="utf-8">
-        <title>Murdoku - Inicio de Sersion</title>
+        <title>Murdoku - Resultados</title>
 
         <!-- -------------EJECUTAR JAVASCRIPT------------------>
-        <!--metiendo la etiqueta script en el head, el navegador ejecuta el script antes de cargar el body--> 
-        
-        <!-- Importante cargar primero el script de JQuery-->
+
         <script type="text/javascript" src="js/jquery_4.0.0.js"></script>
-        <script type="module" src="js/scriptQuery.js"></script>
-		
 
 
         <!-- ------------- TITULO DE LA PAGINA -------------->
@@ -28,57 +24,24 @@
     </head>
 
     <body>
-        <main class="login-card">
-                <!-- Contenedor del Logo superior -->
-                <div class="logo-container">
-                    <img src="img/logo.jpg" alt="Logo BIRTdoku">
-                </div>
+        <div class="contenedor-resultados">
+            <h1>Resumen de Partida</h1>
+            
+            <!-- Contenedor donde se inyectarán los datos del sessionStorage -->
+            <div id="lista-datos">
+                <p>Cargando datos...</p>
+            </div>
 
-                <h1>Iniciar sesión</h1>
-                <p class="subtitle">Ingresa tus datos para continuar</p>
+            <div class="contenedor-botones">
+                <!-- Botón para reiniciar, vinculado desde JS -->
+                <button id="btn-reiniciar" class="btn">Reiniciar Partida</button>
+                
+                <!-- Enlace para volver al juego -->
+                <a href="index.html" class="btn">Salir del juego</a>
+            </div>
+        </div>
 
-                <form action="bienvenida.html" method="GET">
-                    <div class="form-group">
-                        <label for="username">Nombre de usuario</label>
-                        <input 
-                            type="text" 
-                            id="username" 
-                            name="username" 
-                            placeholder="Ingresa tu usuario" 
-                            required 
-                            autocomplete="username"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input 
-                            type="password" 
-                            id="password" 
-                            name="password" 
-                            placeholder="Ingresa tu contraseña" 
-                            required 
-                            autocomplete="current-password"
-                        >
-                    </div>
-
-                    <button type="submit" class="btn">Iniciar sesión</button>
-                </form>
-
-                <form>
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" name="altura" id="altura"><br><br>
-                    
-                    <label for="peso">Contraseña:</label>
-                    <input type="text" name="pass"><br><br>
-                    <button type="button" onclick="login()" class="btn">Login</button>
-                </form>
-
-                <p id="resultado"></p>
-            </main>
- 
-
-    
+        <script type="module" src="js/scriptQuery_resultados.js"></script>
 
         <hr>
     </body>
